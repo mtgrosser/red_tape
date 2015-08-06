@@ -14,4 +14,17 @@ gem 'red_tape'
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+
+# quick syntax
+RedTape.valid?('DE123456789', 'ATU33864707') => true
+
+# if you want detailed error messages from the Bundeszentralamt
+validator = RedTape.validator('DE123456789', 'FOO', company_name: 'Red Bull GmbH', city: 'Fuschl am See')
+
+validator.valid?
+=> false
+
+validator.error
+=> "Die angefragte USt-IdNr. ist ungültig. Sie enthält ein unzulässiges Länderkennzeichen."
+```
