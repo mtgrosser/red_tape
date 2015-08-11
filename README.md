@@ -25,6 +25,6 @@ validator = RedTape.validator('DE123456789', 'FOO', company_name: 'Red Bull GmbH
 validator.valid?
 => false
 
-validator.error
+validator.status
 => :invalid_country
 ```
