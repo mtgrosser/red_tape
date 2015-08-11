@@ -26,5 +26,5 @@ validator.valid?
 => false
 
 validator.error
-=> "Die angefragte USt-IdNr. ist ungültig. Sie enthält ein unzulässiges Länderkennzeichen."
+=> :invalid_country
 ```
