@@ -2,7 +2,7 @@ module RedTape
   module Validators
     class DE < Validator
   
-      attr_reader :own, :other, :options, :error
+      attr_reader :own, :other, :options, :status
     
       def self.country; 'DE'; end
   
@@ -14,7 +14,7 @@ module RedTape
         @result ||= {}
       end
   
-      def error_code
+      def status_code
         result['ErrorCode']
       end
   
@@ -39,13 +39,13 @@ module RedTape
         parser = XMLRPC::XMLParser::REXMLStreamParser::StreamListener.new
         parser.parse(xml)
         @result = Hash[parser.params]
+        set_status
         return true if '200' == error_code
-        set_error
         false
       end
       
-      def set_error
-        @error = 
+      def set_status
+        @status = 
         { '200' => :valid, #'Die angefragte USt-IdNr. ist gültig.',
           '201' => :invalid, #'Die angefragte USt-IdNr. ist ungültig.',
           '202' => :unregistered, #'Die angefragte USt-IdNr. ist ungültig. Sie ist nicht in der Unternehmerdatei des betreffenden EU-Mitgliedstaates registriert. Hinweis: Ihr Geschäftspartner kann seine gültige USt-IdNr. bei der für ihn zuständigen Finanzbehörde in Erfahrung bringen. Möglicherweise muss er einen Antrag stellen, damit seine USt-IdNr. in die Datenbank aufgenommen wird.',
@@ -69,7 +69,7 @@ module RedTape
           '220' => :print_error, #'Bei der Anforderung der amtlichen Bestätigungsmitteilung ist ein Fehler aufgetreten. Sie werden kein Schreiben erhalten.',
           '221' => :unprocessable_request, #'Die Anfragedaten enthalten nicht alle notwendigen Parameter oder einen ungültigen Datentyp. Weitere Informationen erhalten Sie bei den Hinweisen zum Schnittstellen-Aufruf.',
           '999' => :service_unavailable #'Eine Bearbeitung Ihrer Anfrage ist zurzeit nicht möglich. Bitte versuchen Sie es später noch einmal.'
-        }[error_code]
+        }[status_code]
       end
     end
   end
