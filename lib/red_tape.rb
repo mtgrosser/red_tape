@@ -3,6 +3,7 @@ require 'rexml/document'
 require 'xmlrpc/parser'
 
 require_relative 'red_tape/version'
+require_relative 'red_tape/errors'
 require_relative 'red_tape/support'
 require_relative 'red_tape/validator'
 
