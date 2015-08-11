@@ -40,7 +40,7 @@ module RedTape
         parser.parse(xml)
         @result = Hash[parser.params]
         set_status
-        return true if '200' == error_code
+        return true if '200' == status_code
         false
       end
       
