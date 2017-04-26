@@ -18,7 +18,7 @@ module RedTape
     end
     
     def validatable?(own, other)
-      COUNTRIES.include?(country(other)) && validator_for(country(own))
+      !!(COUNTRIES.include?(country(other)) && validator_for(country(own)))
     end
     
     def validator(own, other, options = {})
@@ -29,7 +29,7 @@ module RedTape
     
     def valid?(own, other)
       if validator = validator_for(country(own))
-        validator.valid?(own, other)
+        validator.new(own, other).valid?
       end
     end
 
