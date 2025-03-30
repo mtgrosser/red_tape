@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in red_tape.gemspec
 gemspec
+
+gem 'bundler'
+gem 'rake'
+#gem 'net-http-spy'
+gem 'minitest'
+gem 'webmock'
+gem 'debug'
