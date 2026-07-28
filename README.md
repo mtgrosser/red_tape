@@ -1,8 +1,8 @@
 # RedTape
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/red_tape`. To experiment with that code, run `bin/console` for an interactive prompt.
+Finanzamt-compliant VAT ID validation
 
-TODO: Delete this and the text above, and describe your gem
+RedTape provides a Ruby wrapper fpr extended EU VAT ID validation using the German Bundeszentralamt für Steuern XML RPC API
 
 ## Installation
 

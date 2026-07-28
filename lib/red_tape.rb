@@ -1,6 +1,6 @@
-require 'xmlrpc/client'
-require 'rexml/document'
-require 'xmlrpc/parser'
+require 'json'
+require 'uri'
+require 'net/http'
 
 require_relative 'red_tape/version'
 require_relative 'red_tape/errors'
@@ -27,10 +27,8 @@ module RedTape
       end
     end
     
-    def valid?(own, other)
-      if validator = validator_for(country(own))
-        validator.new(own, other).valid?
-      end
+    def valid?(own, other, options = {})
+      validator(own, other, options)&.valid?
     end
 
   end
