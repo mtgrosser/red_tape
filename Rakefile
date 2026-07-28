@@ -11,13 +11,3 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList['test/*_test.rb']
   t.verbose = true
 end
-
-desc 'Generate documentation'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Maybee'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
-

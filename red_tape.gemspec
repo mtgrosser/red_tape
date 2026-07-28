@@ -13,10 +13,11 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Extended validation using the German Bundeszentralamt für Steuern XML RPC API}
   spec.homepage      = "https://github.com/mtgrosser/red_tape"
 
-  spec.files         = Dir['{lib}/**/*.rb', 'LICENSE', 'README.md', 'CHANGELOG', 'Rakefile']
+  spec.files         = Dir['{lib}/**/*.rb', 'LICENSE', 'README.md', 'CHANGELOG.md']
   spec.require_paths = %w[lib]
   
   spec.required_ruby_version = '>= 3.0.0'
 
   spec.add_dependency 'xmlrpc'
+  spec.add_dependency 'rexml'
 end
