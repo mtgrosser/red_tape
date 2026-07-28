@@ -1,3 +1,6 @@
+[![Gem Version](https://badge.fury.io/rb/red_tape.svg)](https://badge.fury.io/rb/red_tape)
+[![build](https://github.com/mtgrosser/red_tape/actions/workflows/build.yml/badge.svg)](https://github.com/mtgrosser/red_tape/actions/workflows/build.yml)
+
 # RedTape
 
 Finanzamt-compliant VAT ID validation
