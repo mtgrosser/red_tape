@@ -5,7 +5,7 @@
 
 Finanzamt-compliant VAT ID validation
 
-RedTape provides a Ruby wrapper fpr extended EU VAT ID validation using the German Bundeszentralamt für Steuern XML RPC API
+RedTape provides a Ruby wrapper for extended EU VAT ID validation using the German Bundeszentralamt für Steuern REST API
 
 ## Installation
 
@@ -29,5 +29,5 @@ validator.valid?
 => false
 
 validator.status
-=> :invalid_country
+=> :own_vat_id_invalid
 ```
